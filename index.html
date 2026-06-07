@@ -51,6 +51,25 @@
         }
     </script>
 
+    <!-- Event snippet for Clique de saída conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+    <script>
+        function gtag_report_conversion(url) {
+            var callback = function () {
+                if (typeof (url) != 'undefined') {
+                    window.location = url;
+                }
+            };
+            gtag('event', 'conversion', {
+                'send_to': 'AW-17620244278/gPiyCKXVnaobELau_tFB',
+                'value': 1.0,
+                'currency': 'BRL',
+                'event_callback': callback
+            });
+            return false;
+        }
+    </script>
+
     <!-- Custom CSS para animações finas de alta performance e efeitos premium -->
     <style>
         /* Fade-in suave com deslocamento para cima */
@@ -171,7 +190,7 @@
                 </p>
 
                 <!-- Botão de Ação WhatsApp de Alta Conversão -->
-                <div class="opacity-0 animate-fade-in-up animate-delay-300 pt-3 w-full sm:w-auto">
+                <div class="opacity-0 animate-fade-in-up animate-delay-300 pt-3 w-full sm:w-auto" onclick="gtag_report_conversion()">
                     <a href="https://wa.me/5543999999999" target="_blank" rel="noopener noreferrer"
                         class="btn-shine inline-flex items-center justify-center gap-3 w-full sm:w-auto px-8 py-4.5 bg-whatsapp hover:bg-whatsapp-hover text-white font-semibold text-lg rounded-full shadow-lg shadow-whatsapp/20 hover:shadow-xl hover:shadow-whatsapp/30 hover:-translate-y-0.5 transition-all duration-300 ease-out group">
 
